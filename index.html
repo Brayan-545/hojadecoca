@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnergyAce | Helado de Hoja de Coca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'energy-green': '#2e7d32',
+                        'energy-light': '#a5d6a7',
+                        'coca-leaf': '#8bc34a'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero-pattern {
+            background-image: radial-gradient(circle, rgba(165, 214, 167, 0.15) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .icecream-spin {
+            transition: transform 0.8s ease;
+        }
+        .icecream-spin:hover {
+            transform: rotate(20deg) scale(1.05);
+        }
+        .pulse-effect {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-energy-green">
+                    <span class="text-energy-light">Energy</span>Ace
+                </div>
+                <div class="hidden md:flex space-x-8" id="navbarLinks">
+                    <a href="#inicio" class="text-gray-700 hover:text-energy-green">Inicio</a>
+                    <a href="#producto" class="text-gray-700 hover:text-energy-green">Producto</a>
+                    <a href="#beneficios" class="text-gray-700 hover:text-energy-green">Beneficios</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-energy-green">Contacto</a>
+                </div>
+                <button class="md:hidden flex items-center" id="menuBtn" aria-label="Abrir menú">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú móvil -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md px-4 py-4 space-y-4">
+        <a href="#inicio" class="block text-gray-700 hover:text-energy-green">Inicio</a>
+        <a href="#producto" class="block text-gray-700 hover:text-energy-green">Producto</a>
+        <a href="#beneficios" class="block text-gray-700 hover:text-energy-green">Beneficios</a>
+        <a href="#contacto" class="block text-gray-700 hover:text-energy-green">Contacto</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-pattern py-20">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Descubre el <span class="text-energy-green">EnergyAce</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    El primer helado energizante hecho con hoja de coca, una experiencia única que combina sabor y vitalidad.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button id="orderBtn" class="bg-energy-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full pulse-effect transition duration-300">
+                        ¡Ordénalo ahora!
+                    </button>
+                    <button class="border-2 border-energy-green text-energy-green hover:bg-energy-light font-bold py-3 px-6 rounded-full transition duration-300">
+                        Más información
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src= "WhatsApp Image 2025-06-26 at 08.35.59.jpeg" 
+                     class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-xl icecream-spin transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="producto" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">
+                Nuestro <span class="text-energy-green">Helado Especial</span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://www.elespectador.com/resizer/v2/JKWMZZFZNND57BAJRVMDNPVGQI.jpg?auth=112038ca31ff8f312c470059050ccd2f2d90b73723e7a9fcd7ca1631c50fc9d1&width=920&height=613&smart=true&quality=60" 
+                         alt="Detalle del helado" 
+                         class="w-full rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-energy-green mb-4">Helado de Hoja de Coca</h3>
+                    <p class="text-gray-600 mb-6">
+                        Nuestro producto estrella combina el tradicional sabor del helado con los beneficios naturales de la hoja de coca, 
+                        creando una experiencia refrescante y energizante única en el mercado.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes principales:</h4>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Hoja de coca orgánica</li>
+                            <li>Crema de leche</li>
+                            <li>Limón</li>
+                            <li>Azúcar</li>
+                            <li>Agua</li>
+
+                        </ul>
+                    </div>
+                    <div class="bg-energy-light bg-opacity-30 p-4 rounded-lg">
+                        <p class="italic text-gray-700">
+                            El helado de hoja de Coca no contiene ningún componente químico adicional solo los beneficios naturales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">
+                Beneficios de la <span class="text-energy-green">Hoja de Coca</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-energy-green text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-2">Energía Natural</h3>
+                    <p class="text-gray-600">
+                        La hoja de caca proporciona un aumento de energía gradual sin los picos de cafeína.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-energy-green text-4xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold mb-2">100% Natural</h3>
+                    <p class="text-gray-600">
+                        Ingredientes naturales sin aditivos artificiales ni conservantes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-energy-green text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold mb-2">Digestión Fácil</h3>
+                    <p class="text-gray-600">
+                        Ayuda en la digestión y contiene nutrientes esenciales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">
+                Lo que dicen nuestros <span class="text-energy-green">clientes</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl relative">
+                    <div class="absolute -top-4 -left-4 text-5xl text-energy-green opacity-30">"</div>
+                    <p class="text-gray-600 mb-4">
+                        Desde que probé el helado de coca no he vuelto a necesitar mi café de la tarde. Me da energía sin el bajón posterior.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://media.istockphoto.com/id/1323400501/es/foto/feliz-disparo-a-la-cabeza-de-una-joven-latina-con-fondo-de-expresi%C3%B3n-de-sonrisa-con-espacio-de.jpg?s=1024x1024&w=is&k=20&c=4ZWa0MbYsSKwB64uxrTcUoUzeaHZJWgxYrTRHIaRZNQ=" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">María Fernádez.</h4>
+                            <p class="text-gray-500 text-sm">Reseña del cliente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl relative">
+                    <div class="absolute -top-4 -left-4 text-5xl text-energy-green opacity-30">"</div>
+                    <p class="text-gray-600 mb-4">
+                        El sabor es increíblemente fresco y único. Además me encanta saber que estoy consumiendo algo natural y saludable.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Morato</h4>
+                            <p class="text-gray-500 text-sm">Reseña del cliente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-energy-green text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                ¿Listo para probar el <span class="text-white">EnergyAce</span>?
+            </h2>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold mb-2">
+                        <span class="text-energy-light">Energy</span>Ace
+                    </div>
+                    <p class="text-gray-400">Energía natural en cada cucharada</p>
+                </div>
+                <!-- Footer con redes sociales funcionales en una fila -->
+                <footer class="bg-gray-800 text-white py-8">
+                    <div class="max-w-6xl mx-auto px-4">
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                            <div class="mb-6 md:mb-0">
+                                <div class="text-2xl font-bold mb-2">
+                                </div>
+                            </div>
+                            <div class="flex space-x-6">
+                                <a href="https://wa.me/59162729206" target="_blank" title="WhatsApp">
+                                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"
+                                        class="w-6 h-6 text-white">
+                                </a>
+                                <a href="https://www.facebook.com/energyace.bo" target="_blank" title="Facebook">
+                                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"
+                                        class="w-6 h-6 text-white">
+                                </a>
+                                <a href="https://www.instagram.com/energyace.bo" target="_blank" title="Instagram">
+                                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"
+                                        class="w-6 h-6 text-white">
+                                </a>
+                                <a href="https://www.tiktok.com/@energyace.bo" target="_blank" title="TikTok">
+                                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"
+                                        class="w-6 h-6 text-white">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú hamburguesa funcional
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Opcional: cerrar menú al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
